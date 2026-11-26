@@ -19,10 +19,8 @@ var GOOGLE_FORM = {
     background:  "entry.0000000006",
     experience:  "entry.0000000007",
     goal:        "entry.0000000008",
-    story:       "entry.0000000009",
-    commitment:  "entry.0000000010",
-    scholarship: "entry.0000000011",
-    fee_ack:     "entry.0000000012"
+    part_time:   "entry.0000000009",
+    fee_ack:     "entry.0000000010"
   }
 };
 

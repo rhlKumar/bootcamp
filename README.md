@@ -26,8 +26,8 @@ Then open http://localhost:4321. Use a server rather than opening the files dire
 
 The form on `/apply/` posts directly into a Google Form, so applications show up in the form's Responses tab and in the linked Google Sheet.
 
-1. Create a Google Form with these 12 questions. Use "Short answer" for all of them so any value is accepted:
-   Name, City, Email, Phone, LinkedIn, Background, Experience, Goal, Story, Commitment, Scholarship, Fee acknowledgement.
+1. Create a Google Form with these 10 questions. Use "Short answer" for all of them so any value is accepted:
+   Name, City, Email, Phone, LinkedIn, Background, Experience, Goal, Part-time job, Fee acknowledgement.
    Don't mark any of them as required in Google Forms. The site does the validation.
 2. In the Google Form, click ⋮ (top right), then **Get pre-filled link**. Type something different into every box (e.g. `a`, `b`, `c`…), then click **Get link** and copy it.
 3. The link looks like

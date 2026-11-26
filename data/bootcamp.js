@@ -14,7 +14,7 @@ window.PROGRAMS.bootcamp = {
   fee: "₹10,000",
   duration: "12 weeks",
   format: "Online: live + self-paced",
-  weeklyHours: "6–8 hours a week",
+  weeklyHours: "6–8 hours of coursework and 20 hours of project work a week",
 
   phases: [
     {

@@ -9,18 +9,18 @@
    4. Paste them below. */
 
 var GOOGLE_FORM = {
-  formId: "PASTE_FORM_ID_HERE",   // e.g. "1FAIpQLSd...."
+  formId: "1FAIpQLSfRjwyXBKQ38K0dQKRdlPifsYr3ABzYqTfjZ8WQI6b6KHK-5A",
   fields: {
-    name:        "entry.0000000001",
-    city:        "entry.0000000002",
-    email:       "entry.0000000003",
-    phone:       "entry.0000000004",
-    linkedin:    "entry.0000000005",
-    background:  "entry.0000000006",
-    experience:  "entry.0000000007",
-    goal:        "entry.0000000008",
-    part_time:   "entry.0000000009",
-    fee_ack:     "entry.0000000010"
+    name:        "entry.929392074",
+    city:        "entry.451625729",
+    email:       "entry.1119779471",
+    phone:       "entry.726789897",
+    linkedin:    "entry.467255094",
+    background:  "entry.953293789",
+    experience:  "entry.1397992889",
+    goal:        "entry.1322810272",
+    part_time:   "entry.463791237",
+    fee_ack:     "entry.612234779"
   }
 };
 

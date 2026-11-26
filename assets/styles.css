@@ -276,7 +276,7 @@ section { padding: clamp(64px, 9vw, 112px) 0; }
 
 /* Footer */
 .site-footer { background: #151c4d; color: #b9bfd9; padding: 56px 0 40px; font-size: 1rem; }
-.site-footer .cols { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 32px; }
+.site-footer .cols { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 32px; }
 .site-footer h4 { font-family: var(--body); color: #fff; font-size: 1rem; font-weight: 600; margin-bottom: 12px; }
 .site-footer ul { list-style: none; padding: 0; margin: 0; }
 .site-footer li { margin-bottom: 8px; }

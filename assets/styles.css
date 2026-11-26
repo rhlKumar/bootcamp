@@ -1,4 +1,4 @@
-/* YourStartup — site styles
+/* EIRcamp — site styles
    Palette: marigold field, indigo ink, cool paper. Type: Anek Latin (display) + Mukta (body). */
 
 :root {
@@ -360,3 +360,37 @@ fieldset { border: 0; padding: 0; margin: 0 0 22px; }
 .success h2 { margin-bottom: 12px; }
 .dev-note { margin-bottom: 24px; padding: 14px 16px; background: #fff3d1; border-radius: 6px; font-size: 0.95rem; color: #5c4100; }
 .dev-note code { font-size: 0.9em; }
+
+/* ---------- EIRcamp additions ---------- */
+
+/* People who started as EIRs */
+.eirs { list-style: none; padding: 0; margin: 0; border-top: 2px solid var(--ink); }
+.eirs li { display: grid; grid-template-columns: 220px 1fr; gap: 8px 40px; padding: 26px 0; border-bottom: 1px solid var(--rule); }
+.eirs .who { font-family: var(--display); font-weight: 700; font-size: 1.3rem; color: var(--ink); line-height: 1.2; }
+.eirs .where { display: block; font-family: var(--body); font-weight: 400; font-size: 1rem; color: var(--muted); margin-top: 6px; }
+.eirs p { margin: 0 0 6px; }
+.eirs .src { font-size: 0.92rem; color: var(--muted); }
+.eirs .src a { color: var(--muted); }
+.eirs-note { margin-top: 20px; font-size: 1rem; color: var(--muted); }
+@media (max-width: 720px) { .eirs li { grid-template-columns: 1fr; } }
+
+/* Job post asks mapped to weeks */
+.jdmap { width: 100%; border-collapse: collapse; font-size: 1.05rem; }
+.jdmap caption { text-align: left; color: var(--muted); font-size: 0.98rem; padding-bottom: 12px; }
+.jdmap th { text-align: left; font-family: var(--body); font-weight: 600; font-size: 0.95rem; color: var(--muted); padding: 0 0 10px; border-bottom: 2px solid var(--ink); }
+.jdmap td { padding: 16px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.jdmap td:first-child { padding-right: 32px; color: var(--text); }
+.jdmap td:last-child { white-space: nowrap; font-family: var(--display); font-weight: 600; color: var(--ink); }
+.jdmap .ask { font-family: var(--display); font-weight: 600; font-size: 1.15rem; color: var(--ink); display: block; line-height: 1.3; }
+.jdmap .ctx { display: block; font-size: 0.95rem; color: var(--muted); margin-top: 2px; }
+@media (max-width: 560px) { .jdmap td:last-child { white-space: normal; } }
+
+/* Three kinds of EIR */
+.kinds { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.kind { background: #fff; border: 1px solid var(--rule); border-radius: 8px; padding: 24px; }
+.kind h3 { margin-bottom: 8px; }
+.kind p { font-size: 1.02rem; color: var(--text); }
+.kind dl { margin: 14px 0 0; padding-top: 14px; border-top: 1px solid var(--rule); font-size: 0.98rem; display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; }
+.kind dt { color: var(--muted); }
+.kind dd { margin: 0; }
+@media (max-width: 880px) { .kinds { grid-template-columns: 1fr; } }

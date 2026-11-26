@@ -16,12 +16,13 @@ var GOOGLE_FORM = {
     email:       "entry.0000000003",
     phone:       "entry.0000000004",
     linkedin:    "entry.0000000005",
-    stage:       "entry.0000000006",
-    startup:     "entry.0000000007",
-    commitment:  "entry.0000000008",
-    source:      "entry.0000000009",
-    scholarship: "entry.0000000010",
-    fee_ack:     "entry.0000000011"
+    background:  "entry.0000000006",
+    experience:  "entry.0000000007",
+    goal:        "entry.0000000008",
+    story:       "entry.0000000009",
+    commitment:  "entry.0000000010",
+    scholarship: "entry.0000000011",
+    fee_ack:     "entry.0000000012"
   }
 };
 

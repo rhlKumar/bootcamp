@@ -402,3 +402,14 @@ fieldset { border: 0; padding: 0; margin: 0 0 22px; }
 .mentor .role { font-weight: 600; color: var(--text); margin-bottom: 6px; }
 .mentor .avatar { color: var(--ink); background: #fff3d1; aspect-ratio: auto; height: 72px; width: 72px; border-radius: 50%; font-size: 1.4rem; }
 .mentor .photo { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; margin-bottom: 14px; background: var(--tint); }
+
+/* Terms and privacy pages */
+.legal-page { padding: clamp(40px, 6vw, 72px) 0 clamp(64px, 9vw, 112px); }
+.legal-page .wrap { max-width: 760px; }
+.legal-page h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); margin-bottom: 8px; }
+.legal-page .updated { color: var(--muted); font-size: 0.98rem; margin-bottom: 28px; }
+.legal-page .legal-intro { font-size: 1.2rem; color: var(--text); margin-bottom: 8px; }
+.legal-page h2 { font-size: 1.4rem; margin: 40px 0 10px; padding-top: 24px; border-top: 1px solid var(--rule); }
+.legal-page ul { padding-left: 22px; margin: 0 0 1em; }
+.legal-page li { margin-bottom: 6px; max-width: 64ch; }
+.consent { font-size: 0.95rem; color: var(--muted); margin: 0 0 16px; }

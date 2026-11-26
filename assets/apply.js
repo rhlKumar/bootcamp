@@ -78,6 +78,8 @@ var GOOGLE_FORM = {
     btn.textContent = "Sending…";
 
     function done() {
+      // Meta Pixel: count a lead only once the application has been sent.
+      if (window.fbq) fbq("track", "Lead", { content_name: "EIRcamp Bootcamp", value: 10000, currency: "INR" });
       form.hidden = true;
       var s = document.getElementById("success");
       s.hidden = false;

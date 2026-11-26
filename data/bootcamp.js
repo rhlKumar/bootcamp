@@ -8,8 +8,8 @@ window.PROGRAMS.bootcamp = {
   slug: "bootcamp",
   name: "EIRcamp Bootcamp",
   cohort: "Cohort 1",
-  startDate: "6 March 2027",          // PLACEHOLDER: confirm date
-  applyBy: "20 February 2027",        // PLACEHOLDER: confirm date
+  startDate: "15 December 2026",         // PLACEHOLDER: confirm date
+  applyBy: "8 December 2026",        // PLACEHOLDER: confirm date
   seats: 40,                          // PLACEHOLDER: confirm seat count
   fee: "₹10,000",
   duration: "12 weeks",

@@ -10,7 +10,7 @@ window.PROGRAMS.bootcamp = {
   cohort: "Cohort 1",
   startDate: "15 December 2026",         // PLACEHOLDER: confirm date
   applyBy: "8 December 2026",        // PLACEHOLDER: confirm date
-  seats: 40,                          // PLACEHOLDER: confirm seat count
+  seats: 20,
   fee: "₹10,000",
   duration: "12 weeks",
   format: "Online: live + self-paced",

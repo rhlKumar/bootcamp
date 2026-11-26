@@ -25,9 +25,9 @@ window.PROGRAMS.bootcamp = {
         {
           title: "What an EIR actually does",
           goal: "Understand the three kinds of EIR role in India and decide which one you're aiming for.",
-          live: ["Startup EIR, VC EIR and incubator EIR: how each one works and gets paid", "Reading real EIR job posts: what founders are really asking for"],
+          live: ["Startup EIR, VC EIR and incubator EIR: how each one works and gets paid", "What founders expect from an EIR in the first 90 days"],
           self: ["How Cloudera started inside Accel's office", "NIDHI-EIR and other incubator programs, explained"],
-          deliverable: ["Your target role, written in one paragraph", "Five EIR or founder's office job posts, annotated"]
+          deliverable: ["Your target role, written in one paragraph", "A list of 10 companies or funds you'd like to work with, and why"]
         },
         {
           title: "Find a new line of business",

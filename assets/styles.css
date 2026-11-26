@@ -401,3 +401,4 @@ fieldset { border: 0; padding: 0; margin: 0 0 22px; }
 .mentor h3 a:hover { text-decoration: underline; }
 .mentor .role { font-weight: 600; color: var(--text); margin-bottom: 6px; }
 .mentor .avatar { color: var(--ink); background: #fff3d1; aspect-ratio: auto; height: 72px; width: 72px; border-radius: 50%; font-size: 1.4rem; }
+.mentor .photo { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; margin-bottom: 14px; background: var(--tint); }

@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apply to the Founder Fellowship: EIRcamp</title>
+  <meta name="description" content="Apply to the EIRcamp Founder Fellowship, a 12-week online program for early-stage founders in India. Applying is free.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..800&family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css?v=4">
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('set', 'autoConfig', false, '1138514168899593');
+  fbq('init', '1138514168899593');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1138514168899593&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">EIR<span>camp</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/programs/founder/">Founder Fellowship</a>
+      <a href="/programs/bootcamp/">EIR Bootcamp</a>
+      <a href="/programs/founder/#faq">FAQ</a>
+      <a class="btn btn-sm" href="/apply/founder/" aria-current="page">Apply</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" style="padding-bottom:clamp(56px,8vw,96px)">
+    <div class="wrap apply-layout">
+      <div class="apply-aside">
+        <h1 style="font-size:clamp(2.25rem,5vw,3.5rem)">Apply to the Founder Fellowship</h1>
+        <p class="lede">It takes about one minute. Applying is free.<br>Tell us about you and your startup, even if it's only an idea.</p>
+        <ol class="steps">
+          <li><div><b>Send this form</b><p>Tell us about your idea, how far you've got and what you need most.</p></div></li>
+          <li><div><b>A 15-minute call</b><p>If it looks like a fit, we'll call you within a week to talk it through.</p></div></li>
+          <li><div><b>Pay and join</b><p>Accepted founders pay ₹10,000 to confirm their seat, then join the cohort group.</p></div></li>
+        </ol>
+      </div>
+
+      <div class="form-card" id="form-card">
+        <div class="dev-note" id="dev-note" hidden>
+          <strong>Not connected yet.</strong> Add your Google Form's ID and field IDs in <code>assets/apply.js</code> (see README.md). Until then, submissions aren't saved.
+        </div>
+
+        <form id="apply-form" data-program="founder" novalidate>
+          <p class="step-count" id="step-count">Step 1 of 2: Your contact details</p>
+
+          <div class="form-step" id="step-1">
+          <div class="row">
+            <div class="field">
+              <label for="name">Full name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required>
+              <p class="error">Enter your full name.</p>
+            </div>
+            <div class="field">
+              <label for="city">City</label>
+              <input id="city" name="city" type="text" autocomplete="address-level2" required>
+              <p class="error">Enter the city you live in.</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+              <p class="error">Enter an email address like name@example.com.</p>
+            </div>
+            <div class="field">
+              <label for="phone">Phone (WhatsApp)</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="98765 43210" pattern="(\+?91[ \-]?)?[6-9][0-9]{4}[ \-]?[0-9]{5}" required>
+              <p class="error">Enter a 10-digit Indian mobile number.</p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="linkedin">LinkedIn profile <span class="opt">(optional)</span></label>
+            <input id="linkedin" name="linkedin" type="url" placeholder="https://www.linkedin.com/in/…">
+            <p class="error">Enter a full link starting with https://</p>
+          </div>
+
+          <p class="consent">When you click Continue, we save these details so we can contact you about EIRcamp, even if you don't finish the application. See our <a href="/terms/">terms</a> and <a href="/privacy/">privacy policy</a>.</p>
+          <button class="btn" type="button" id="next-btn">Continue</button>
+          </div>
+
+          <div class="form-step" id="step-2" data-label="Step 2 of 2: Your startup" hidden>
+
+          <div class="field">
+            <label for="startup_name">Startup name <span class="opt">(optional, if you have one)</span></label>
+            <input id="startup_name" name="startup_name" type="text">
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="stage">How far have you got?</label>
+              <select id="stage" name="stage" required>
+                <option value="">Choose one</option>
+                <option>Just an idea</option>
+                <option>Building a prototype or MVP</option>
+                <option>Have a product and users</option>
+                <option>Have paying customers</option>
+              </select>
+              <p class="error">Choose the closest option.</p>
+            </div>
+            <div class="field">
+              <label for="sector">Sector</label>
+              <select id="sector" name="sector" required>
+                <option value="">Choose one</option>
+                <option>Consumer app or service</option>
+                <option>D2C brand</option>
+                <option>SaaS or B2B software</option>
+                <option>Fintech</option>
+                <option>Health</option>
+                <option>Education</option>
+                <option>Climate or sustainability</option>
+                <option>Deeptech or hardware</option>
+                <option>Something else</option>
+              </select>
+              <p class="error">Choose the closest option.</p>
+            </div>
+          </div>
+
+          <fieldset class="field" id="cofounder-group">
+            <legend>Do you have a co-founder?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="cofounder" value="I'm a solo founder" required> I'm a solo founder</label>
+              <label class="choice"><input type="radio" name="cofounder" value="I have a co-founder"> I have a co-founder</label>
+              <label class="choice"><input type="radio" name="cofounder" value="I'm looking for a co-founder"> I'm looking for a co-founder</label>
+            </div>
+            <p class="error">Choose an answer.</p>
+          </fieldset>
+
+          <fieldset class="field" id="need-group">
+            <legend>What do you need most right now?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="need" value="Validate my idea" required> Validate my idea</label>
+              <label class="choice"><input type="radio" name="need" value="Build my MVP"> Build my MVP</label>
+              <label class="choice"><input type="radio" name="need" value="Get customers"> Get customers</label>
+              <label class="choice"><input type="radio" name="need" value="Raise funding"> Raise funding</label>
+            </div>
+            <p class="error">Choose the option closest to what you need.</p>
+          </fieldset>
+
+          <fieldset class="field" id="ack-group">
+            <label class="ack"><input type="checkbox" id="fee_ack" name="fee_ack" value="Yes" required> <span>I understand the program fee is ₹10,000, paid only if I'm accepted.</span></label>
+            <p class="error">Please confirm you've read the fee.</p>
+          </fieldset>
+
+          <p class="consent">By sending this application, you agree to our <a href="/terms/">terms</a> and to us using your details as described in our <a href="/privacy/">privacy policy</a>.</p>
+          <div class="step-actions">
+            <button class="btn" type="submit" id="submit-btn">Send application</button>
+            <button class="btn-back" type="button" id="back-btn">Back</button>
+          </div>
+          </div>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="success" id="success" hidden tabindex="-1">
+          <h2>Application sent</h2>
+          <p>Thanks. We've received your application for the Founder Fellowship. If it looks like a fit, we'll contact you on WhatsApp or email within a week to set up a 15-minute call.</p>
+          <p><a href="/programs/founder/#curriculum">Look through the 12-week plan</a> while you wait.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="plan-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="plan-title">The 12-week plan</h2>
+        <p>Four stages, three weeks each: validate the idea, build the MVP, grow your first customers, then raise.</p>
+      </div>
+      <div class="phases" id="phases"></div>
+      <div class="hero-actions" style="margin-top:32px">
+        <a class="btn" href="#form-card">Apply for Cohort 1</a>
+        <a class="btn btn-ghost" href="/programs/founder/#curriculum">See what happens each week</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="logo" href="/">EIR<span>camp</span></a>
+        <p style="margin-top:12px">Training for entrepreneurs in residence in India.</p>
+      </div>
+      <div>
+        <h4>Programs</h4>
+        <ul><li><a href="/programs/bootcamp/">12-week EIR Bootcamp</a></li><li><a href="/programs/founder/">12-week Founder Fellowship</a></li></ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul><li><a href="#">About</a></li><li><a href="mailto:support@gumbotech.in">Contact</a></li><li><a href="/terms/">Terms</a></li><li><a href="/privacy/">Privacy</a></li></ul>
+      </div>
+    </div>
+    <p class="legal">© 2026 Gumbo Tech Pvt. Ltd., Bengaluru.</p>
+  </div>
+</footer>
+
+<script src="/data/bootcamp.js"></script>
+<script src="/data/founder.js"></script>
+<script>renderPhases(document.getElementById("phases"), PROGRAMS.founder);</script>
+<script src="/assets/apply.js?v=5"></script>
+<script src="/assets/source.js"></script>
+</body>
+</html>

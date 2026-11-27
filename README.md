@@ -1,12 +1,14 @@
 # EIRcamp website
 
-A static site with three pages and no build step:
+A static site with no build step. The main pages:
 
 | Page | File |
 |---|---|
 | Landing page | `index.html` |
 | Bootcamp program page | `programs/bootcamp/index.html` |
-| Application form | `apply/index.html` |
+| Application form (Bootcamp) | `apply/index.html` |
+| Founder Fellowship program page | `programs/founder/index.html` |
+| Application form (Founder Fellowship) | `apply/founder/index.html` |
 
 ## Run it locally
 
@@ -18,7 +20,7 @@ Then open http://localhost:4321. Use a server rather than opening the files dire
 
 ## Where to edit things
 
-- **Curriculum, dates, seats:** `data/bootcamp.js`. Both the landing page and the program page read the 12-week plan, start date, application deadline and seat count from this file.
+- **Curriculum, dates, seats:** `data/bootcamp.js` for the Bootcamp, `data/founder.js` for the Founder Fellowship. Both the landing page and the program page read the 12-week plan, start date, application deadline and seat count from this file.
 - **Colours and fonts:** the variables at the top of `assets/styles.css`.
 - **Placeholders:** anything in a dashed box with a yellow "Placeholder" tag (mentors and refund policy). Search the HTML for `ph-note` to find them all. The dates and seat count in `data/bootcamp.js` are placeholders too.
 
@@ -34,10 +36,16 @@ The form on `/apply/` posts directly into a Google Form, so applications show up
    `https://docs.google.com/forms/d/e/1FAIpQLSc...XYZ/viewform?usp=pp_url&entry.123456=a&entry.234567=b...`
    - The part between `/d/e/` and `/viewform` is your **form ID**.
    - Each `entry.NNNNNN` is one question's ID. Match each to the letter you typed.
-4. Paste the form ID and entry IDs into `GOOGLE_FORM` at the top of `assets/apply.js`.
+4. Paste the form ID and entry IDs into `GOOGLE_FORMS.bootcamp` at the top of `assets/apply.js`.
 5. Submit a test application from the site and check that it appears in the form's Responses tab.
 
 Until step 4 is done, the form still validates and shows the success message, but nothing is saved. The yellow "Not connected yet" note appears only on localhost.
+
+### Founder Fellowship form
+
+The Founder Fellowship has its own Google Form. Create one with these 12 short-answer questions, none required:
+Name, City, Email, Phone, LinkedIn, Startup name, Stage, Sector, Co-founder, Need, Fee acknowledgement, Source.
+Then paste its form ID and entry IDs into `GOOGLE_FORMS.founder` in `assets/apply.js`.
 
 To get an email for each application, open the Responses tab in Google Forms, click ⋮ and turn on **Get email notifications for new responses**.
 

@@ -8,21 +8,44 @@
    3. From that link, copy the form ID (between /d/e/ and /viewform) and each entry.NNNN number.
    4. Paste them below. */
 
-var GOOGLE_FORM = {
-  formId: "1FAIpQLSfRjwyXBKQ38K0dQKRdlPifsYr3ABzYqTfjZ8WQI6b6KHK-5A",
-  fields: {
-    name:        "entry.929392074",
-    city:        "entry.451625729",
-    email:       "entry.1119779471",
-    phone:       "entry.726789897",
-    linkedin:    "entry.467255094",
-    background:  "entry.953293789",
-    experience:  "entry.1397992889",
-    goal:        "entry.1322810272",
-    part_time:   "entry.463791237",
-    fee_ack:     "entry.612234779",
-    // Where the person came from (see assets/source.js).
-    source:      "entry.319829797"
+// One Google Form per program. The <form> on each apply page names its program
+// with data-program="…" (no attribute means "bootcamp").
+var GOOGLE_FORMS = {
+  bootcamp: {
+    label: "EIRcamp Bootcamp",
+    formId: "1FAIpQLSfRjwyXBKQ38K0dQKRdlPifsYr3ABzYqTfjZ8WQI6b6KHK-5A",
+    fields: {
+      name:        "entry.929392074",
+      city:        "entry.451625729",
+      email:       "entry.1119779471",
+      phone:       "entry.726789897",
+      linkedin:    "entry.467255094",
+      background:  "entry.953293789",
+      experience:  "entry.1397992889",
+      goal:        "entry.1322810272",
+      part_time:   "entry.463791237",
+      fee_ack:     "entry.612234779",
+      // Where the person came from (see assets/source.js).
+      source:      "entry.319829797"
+    }
+  },
+  founder: {
+    label: "EIRcamp Founder Fellowship",
+    formId: "1FAIpQLSeJTz1yct-pBcey3yFXDUrgwC4ARxX3LR8j_R6qfhHGitxUxw",
+    fields: {
+      name:         "entry.2016380581",
+      city:         "entry.1634342408",
+      email:        "entry.468129177",
+      phone:        "entry.369622028",
+      linkedin:     "entry.753603197",
+      startup_name: "entry.1568480972",
+      stage:        "entry.1003601502",
+      sector:       "entry.2080669846",
+      cofounder:    "entry.1209664252",
+      need:         "entry.329750184",
+      fee_ack:      "entry.856353106",
+      source:       "entry.1028941484"
+    }
   }
 };
 
@@ -33,6 +56,7 @@ var STEP1_FIELDS = ["name", "city", "email", "phone", "linkedin"];
 (function () {
   var form = document.getElementById("apply-form");
   if (!form) return;
+  var GOOGLE_FORM = GOOGLE_FORMS[form.getAttribute("data-program") || "bootcamp"];
   var connected = GOOGLE_FORM.formId.indexOf("PASTE_") !== 0;
   var isLocal = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
   if (!connected && isLocal) document.getElementById("dev-note").hidden = false;
@@ -104,7 +128,7 @@ var STEP1_FIELDS = ["name", "city", "email", "phone", "linkedin"];
   function showStep(n) {
     step1.hidden = n !== 1;
     step2.hidden = n !== 2;
-    stepCount.textContent = n === 1 ? "Step 1 of 2: Your contact details" : "Step 2 of 2: About you";
+    stepCount.textContent = n === 1 ? "Step 1 of 2: Your contact details" : (step2.getAttribute("data-label") || "Step 2 of 2: About you");
     status.textContent = "";
     status.className = "form-status";
     stepCount.scrollIntoView({ block: "nearest" });
@@ -126,6 +150,12 @@ var STEP1_FIELDS = ["name", "city", "email", "phone", "linkedin"];
 
   function next() {
     if (!checkAll(step1, "Some details need fixing before you can continue.")) return;
+    if (!connected && !isLocal) {
+      // Deployed without a Google Form: never pretend details were saved.
+      status.textContent = "Applications aren't open online yet. Please email us at support@gumbotech.in.";
+      status.classList.add("err");
+      return;
+    }
     var body = bodyFor(STEP1_FIELDS.concat("source"));
     var key = body.toString();
     if (key !== savedStep1) {
@@ -134,7 +164,7 @@ var STEP1_FIELDS = ["name", "city", "email", "phone", "linkedin"];
       send(body).then(function () { savedStep1 = key; }).catch(function () {});
     }
     // Meta Pixel: someone gave us their contact details (step 1 done).
-    if (!contactTracked && window.fbq) { fbq("track", "Contact", { content_name: "EIRcamp Bootcamp", source: sourceLabel() }); contactTracked = true; }
+    if (!contactTracked && window.fbq) { fbq("track", "Contact", { content_name: GOOGLE_FORM.label, source: sourceLabel() }); contactTracked = true; }
     showStep(2);
   }
 
@@ -152,7 +182,7 @@ var STEP1_FIELDS = ["name", "city", "email", "phone", "linkedin"];
 
     if (!connected && !isLocal) {
       // Deployed without a Google Form: never pretend an application was saved.
-      status.textContent = "Applications aren't open online yet. Please email us instead.";
+      status.textContent = "Applications aren't open online yet. Please email us at support@gumbotech.in.";
       status.classList.add("err");
       return;
     }
@@ -162,7 +192,7 @@ var STEP1_FIELDS = ["name", "city", "email", "phone", "linkedin"];
 
     send(bodyFor(Object.keys(GOOGLE_FORM.fields))).then(function () {
       // Meta Pixel: count a lead only once the application has been sent.
-      if (window.fbq) fbq("track", "Lead", { content_name: "EIRcamp Bootcamp", value: 10000, currency: "INR", source: sourceLabel() });
+      if (window.fbq) fbq("track", "Lead", { content_name: GOOGLE_FORM.label, value: 10000, currency: "INR", source: sourceLabel() });
       form.hidden = true;
       var s = document.getElementById("success");
       s.hidden = false;

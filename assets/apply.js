@@ -21,9 +21,8 @@ var GOOGLE_FORM = {
     goal:        "entry.1322810272",
     part_time:   "entry.463791237",
     fee_ack:     "entry.612234779",
-    // Where the person came from (see assets/source.js). Leave empty until the
-    // Google Form has a "Source" short-answer question, then paste its entry ID.
-    source:      ""
+    // Where the person came from (see assets/source.js).
+    source:      "entry.319829797"
   }
 };
 

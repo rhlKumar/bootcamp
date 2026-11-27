@@ -20,7 +20,10 @@ var GOOGLE_FORM = {
     experience:  "entry.1397992889",
     goal:        "entry.1322810272",
     part_time:   "entry.463791237",
-    fee_ack:     "entry.612234779"
+    fee_ack:     "entry.612234779",
+    // Where the person came from (see assets/source.js). Leave empty until the
+    // Google Form has a "Source" short-answer question, then paste its entry ID.
+    source:      ""
   }
 };
 
@@ -42,6 +45,10 @@ var STEP1_FIELDS = ["name", "city", "email", "phone", "linkedin"];
   var stepCount = document.getElementById("step-count");
   var savedStep1 = null; // what we last saved, so going Back and Continue again doesn't add a duplicate row
   var contactTracked = false; // send Meta's Contact event once per visit
+
+  function sourceLabel() {
+    return typeof window.eircampSource === "function" ? window.eircampSource() : "direct";
+  }
 
   function groupOf(el) { return el.closest(".field, fieldset"); }
 
@@ -75,8 +82,8 @@ var STEP1_FIELDS = ["name", "city", "email", "phone", "linkedin"];
     var data = new FormData(form);
     var body = new URLSearchParams();
     keys.forEach(function (key) {
-      var v = data.get(key);
-      if (v) body.append(GOOGLE_FORM.fields[key], v);
+      var v = key === "source" ? sourceLabel() : data.get(key);
+      if (v && GOOGLE_FORM.fields[key]) body.append(GOOGLE_FORM.fields[key], v);
     });
     return body;
   }
@@ -120,7 +127,7 @@ var STEP1_FIELDS = ["name", "city", "email", "phone", "linkedin"];
 
   function next() {
     if (!checkAll(step1, "Some details need fixing before you can continue.")) return;
-    var body = bodyFor(STEP1_FIELDS);
+    var body = bodyFor(STEP1_FIELDS.concat("source"));
     var key = body.toString();
     if (key !== savedStep1) {
       // Save in the background. If it fails, the full application still
@@ -128,7 +135,7 @@ var STEP1_FIELDS = ["name", "city", "email", "phone", "linkedin"];
       send(body).then(function () { savedStep1 = key; }).catch(function () {});
     }
     // Meta Pixel: someone gave us their contact details (step 1 done).
-    if (!contactTracked && window.fbq) { fbq("track", "Contact", { content_name: "EIRcamp Bootcamp" }); contactTracked = true; }
+    if (!contactTracked && window.fbq) { fbq("track", "Contact", { content_name: "EIRcamp Bootcamp", source: sourceLabel() }); contactTracked = true; }
     showStep(2);
   }
 
@@ -156,7 +163,7 @@ var STEP1_FIELDS = ["name", "city", "email", "phone", "linkedin"];
 
     send(bodyFor(Object.keys(GOOGLE_FORM.fields))).then(function () {
       // Meta Pixel: count a lead only once the application has been sent.
-      if (window.fbq) fbq("track", "Lead", { content_name: "EIRcamp Bootcamp", value: 10000, currency: "INR" });
+      if (window.fbq) fbq("track", "Lead", { content_name: "EIRcamp Bootcamp", value: 10000, currency: "INR", source: sourceLabel() });
       form.hidden = true;
       var s = document.getElementById("success");
       s.hidden = false;

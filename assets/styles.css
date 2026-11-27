@@ -424,3 +424,9 @@ fieldset { border: 0; padding: 0; margin: 0 0 22px; }
   .promo-video { max-width: 320px; margin: 0 auto; }
 }
 @media (max-width: 560px) { .mentors { grid-template-columns: 1fr; } }
+
+/* Two-step application form */
+.step-count { font-weight: 600; color: var(--muted); margin: 0 0 18px; }
+.step-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.btn-back { background: none; border: 0; padding: 8px 0; font: inherit; font-weight: 600; color: var(--muted); text-decoration: underline; cursor: pointer; }
+.btn-back:hover { color: var(--text); }

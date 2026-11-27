@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..800&family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles.css?v=2">
+  <link rel="stylesheet" href="/assets/styles.css?v=3">
   <!-- Meta Pixel Code -->
   <script>
   !function(f,b,e,v,n,t,s)
@@ -19,6 +19,7 @@
   t.src=v;s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('set', 'autoConfig', false, '1138514168899593');
   fbq('init', '1138514168899593');
   fbq('track', 'PageView');
   </script>
@@ -61,6 +62,9 @@
         </div>
 
         <form id="apply-form" novalidate>
+          <p class="step-count" id="step-count">Step 1 of 2: Your contact details</p>
+
+          <div class="form-step" id="step-1">
           <div class="row">
             <div class="field">
               <label for="name">Full name</label>
@@ -92,6 +96,12 @@
             <input id="linkedin" name="linkedin" type="url" placeholder="https://www.linkedin.com/in/…">
             <p class="error">Enter a full link starting with https://</p>
           </div>
+
+          <p class="consent">When you click Continue, we save these details so we can contact you about EIRcamp, even if you don't finish the application. See our <a href="/terms/">terms</a> and <a href="/privacy/">privacy policy</a>.</p>
+          <button class="btn" type="button" id="next-btn">Continue</button>
+          </div>
+
+          <div class="form-step" id="step-2" hidden>
 
           <div class="row">
             <div class="field">
@@ -149,7 +159,11 @@
           </fieldset>
 
           <p class="consent">By sending this application, you agree to our <a href="/terms/">terms</a> and to us using your details as described in our <a href="/privacy/">privacy policy</a>.</p>
-          <button class="btn" type="submit" id="submit-btn">Send application</button>
+          <div class="step-actions">
+            <button class="btn" type="submit" id="submit-btn">Send application</button>
+            <button class="btn-back" type="button" id="back-btn">Back</button>
+          </div>
+          </div>
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         </form>
 

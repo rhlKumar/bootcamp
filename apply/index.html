@@ -175,6 +175,37 @@
       </div>
     </div>
   </section>
+
+  <section class="promo" aria-labelledby="promo-title">
+    <div class="wrap">
+      <video class="promo-video" controls playsinline preload="none" poster="/assets/video/eircamp-promo-v2-poster.jpg" aria-label="EIRcamp promo video, 22 seconds">
+        <source src="/assets/video/eircamp-promo-v2.mp4" type="video/mp4">
+      </video>
+      <div class="promo-text">
+        <h2 id="promo-title">EIRcamp in under 30 seconds</h2>
+        <p>There's no school or degree for becoming an entrepreneur in residence. Most people learn the job by doing it.</p>
+        <p>EIRcamp gives you 12 weeks of doing it: building a real new business, with founders who hire EIRs as your mentors.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#form-card">Go to the application</a>
+          <a class="btn btn-ghost" href="#plan-title">See the 12-week plan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="plan-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="plan-title">The 12-week plan</h2>
+        <p>Four stages, three weeks each, following the life of a new business: spot it, build it, run it, then land your next role or raise for your own.</p>
+      </div>
+      <div class="phases" id="phases"></div>
+      <div class="hero-actions" style="margin-top:32px">
+        <a class="btn" href="#form-card">Apply for Cohort 1</a>
+        <a class="btn btn-ghost" href="/programs/bootcamp/#curriculum">See what happens each week</a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="site-footer">
@@ -197,6 +228,8 @@
   </div>
 </footer>
 
+<script src="/data/bootcamp.js"></script>
+<script>renderPhases(document.getElementById("phases"), PROGRAMS.bootcamp);</script>
 <script src="/assets/apply.js"></script>
 </body>
 </html>
